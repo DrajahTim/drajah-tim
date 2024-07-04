@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<title>HNG11 stage1 project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<script src="/w3.js"></script>
+<link rel="stylesheet" href="w3.css">
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer   -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>D'RAJAH TIM</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">@DrajahTim</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="/images/coding-workstation-setup-stockcake(14).jpg" style=" width="100%">
+    <div class="w3-container">
+      <h3><b>INTRODUCTION</b></h3>
+      
+        
+        <h1>Current date and time:</h1>
+        <span id="datetime"></span>
+    
+        <script>
+          // create a function to update the date and time
+          function updateDateTime() {
+            // create a new `Date` object
+            const now = new Date();
+    
+            // get the current date and time as a string
+            const currentDateTime = now.toLocaleString();
+    
+            // update the `textContent` property of the `span` element with the `id` of `datetime`
+            document.querySelector('#datetime').textContent = currentDateTime;
+          }
+    
+          // call the `updateDateTime` function every second
+          setInterval(updateDateTime, 1000);
+        </script>
+    </span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Welcome to my journey in the tech world! I am Drajah Tim, a passionate learner diving into various domains within technology. Currently, my focus lies on front-end development, with a solid foundation in Python for data analysis and Java programming. Additionally, I am actively pursuing courses in cybersecurity and ethical hacking to broaden my skill set.</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!--  entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="/images/drone-aerial-surveillance-stockcake.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>ENTRY</b></h3>
+    </div>
+
+    <div class="w3-container">
+      <p>Goals Overview
+        Over the next two years, my primary objective is to hone my existing skills and leverage them effectively. Below are my detailed goals.</p>
+        <br>
+        <ul>
+            <li>
+                <h3><b>Front-End Development Mastery</b></h3>
+                <br>
+                <p>I aim to become proficient in front-end development technologies, including HTML, CSS, and JavaScript. By practicing responsive design principles and mastering popular frameworks such as React or Vue.js, I strive to create intuitive and user-friendly web interfaces.</p>
+            </li>
+            <li>
+                <h3><b>Advanced Data Analysis With Python</b></h3>
+                <br>
+                <p>Building upon my existing knowledge of Python, I intend to delve deeper into data analysis and visualization techniques. By exploring libraries like Pandas, NumPy, and Matplotlib, I aim to develop robust data-driven solutions and gain insights from complex datasets.</p>
+            </li>
+            <li>
+                <h3><b>Strengthening Java Skills</b></h3>
+                <br>
+                <p>I plan to enhance my proficiency in Java by exploring advanced topics such as multithreading, design patterns, and JavaFX for building desktop applications. This will enable me to develop scalable and efficient software solutions.</p>
+            </li>
+            <li>
+                <h3><b>Cybersecurity Expertise</b></h3>
+                <br>
+                <p>My ongoing courses in cybersecurity and ethical hacking are crucial components of my learning journey. I aspire to attain practical skills in threat detection, penetration testing, and secure coding practices. Ultimately, I aim to contribute to creating safer digital environments.</p>
+            </li>
+            <li>
+                <h3><b>Applying Skills productively</b></h3>
+                <br>
+                <p>Within the next two years, I aim to apply my consolidated skills in real-world projects. Whether it's developing a responsive website, conducting data analysis for business insights, or securing systems against cyber threats, I look forward to making tangible contributions in the tech industry.</p>
+            </li>
+        </ul>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="/images/slack dp.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Drajah Timothy</b></h4>
+      <p>Contact me<a href="https://join.slack.com/shareDM/zt-2lxgeqgbb-hLEQ7lfaY96D0mNn7lT4yQ" data-test="slackDisplayName" target="_blank">@Slack</a></p>
+      <br>
+
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="/images/evening-coding-session-stockcake.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Cyber</span><br>
+        <span></a>Security</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/images/gaming-keyboard-action-stockcake.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Advanced Data Analysis </span><br>
+        <span>Python</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="/images/coding-workstation-setup-stockcake(14).jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Front-End Development Mastery</span><br>
+        <span>Html,Css</span>
+      </li>   
+    
+    </ul>
+  </div>
+  <hr> 
+ 
+  
+  
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p><a href="http://hng.tech/learn" data-test="http://hng.tech/learn" target="_blank">HNG.TECH</a></p>
+  <br>
+  <p><a href="http://keyword.dog" data-test="http://keyword.dog" target="_blank">KEYWORD.DOG</a></p>
+  <br>
+  <p><a href="http://scrapanyweb.site" data-test="http://scrapanyweb.site" target="_blank">SCRAPANYWEB.SITE</a></p>
+</footer>
+
+</body>
