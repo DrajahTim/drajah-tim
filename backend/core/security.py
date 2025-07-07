@@ -40,29 +40,39 @@ def create_access_token(
     )
     return encoded_jwt
 
-# The verify_token function will be more useful when we have the OAuth2 password bearer flow.
-# For now, a basic structure. It would typically be used in a dependency that extracts
-# the token from the request and verifies it.
+from fastapi import HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+import uuid # For converting string UUID from token sub back to UUID object
 
-# Example structure for a token verification function (to be expanded later)
-# from fastapi import HTTPException, status
-# from backend.schemas.token import TokenData
-#
-# async def decode_access_token(token: str, credentials_exception: HTTPException) -> TokenData:
-#     """
-#     Decodes an access token.
-#     :param token: The JWT token string.
-#     :param credentials_exception: Exception to raise if token is invalid.
-#     :return: TokenData schema containing the payload.
-#     """
-#     try:
-#         payload = jwt.decode(
-#             token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
-#         )
-#         user_id: Optional[str] = payload.get("sub")
-#         if user_id is None:
-#             raise credentials_exception
-#         token_data = TokenData(user_id=user_id) # In Pydantic v2, use user_id=uuid.UUID(user_id) if sub is UUID
-#     except JWTError:
-#         raise credentials_exception
-#     return token_data
+from backend.schemas.token import TokenData # Make sure TokenData schema is defined
+
+# Instance of OAuth2PasswordBearer, tokenUrl should point to your token endpoint
+# Adjust the tokenUrl as per your router prefix. If your auth router is at /api/v1/auth and token endpoint is /token:
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
+
+
+async def decode_access_token(token: str, credentials_exception: HTTPException) -> TokenData:
+    """
+    Decodes an access token.
+    :param token: The JWT token string.
+    :param credentials_exception: Exception to raise if token is invalid.
+    :return: TokenData schema containing the payload (user_id).
+    """
+    try:
+        payload = jwt.decode(
+            token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
+        )
+        subject: Optional[str] = payload.get("sub")
+        if subject is None:
+            raise credentials_exception
+
+        # Attempt to convert subject to UUID. If it fails, it's not a valid ID.
+        try:
+            user_id_uuid = uuid.UUID(subject)
+        except ValueError:
+            raise credentials_exception
+
+        token_data = TokenData(user_id=user_id_uuid)
+    except JWTError: # Catches errors from jwt.decode like ExpiredSignatureError, InvalidTokenError
+        raise credentials_exception
+    return token_data

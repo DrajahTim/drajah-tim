@@ -1,27 +1,15 @@
-# This directory will contain different API route modules.
-# For example, you might have:
-# - queues.py (for queue management endpoints)
-# - users.py (for user authentication and management)
-# - businesses.py (for business/service provider specific endpoints)
+# backend/routers/__init__.py
 
-# Example: backend/routers/queues.py
-#
-# from fastapi import APIRouter, Depends, HTTPException
-# from sqlalchemy.orm import Session
-# from .. import models, schemas, dependencies
-#
-# router = APIRouter(
-#     prefix="/queues",
-#     tags=["queues"],
-#     responses={404: {"description": "Not found"}},
-# )
-#
-# @router.post("/", response_model=schemas.Queue)
-# def create_queue(queue: schemas.QueueCreate, db: Session = Depends(dependencies.get_db)):
-#     # Logic to create a queue
-#     pass
-#
-# @router.get("/{queue_id}", response_model=schemas.Queue)
-# def read_queue(queue_id: int, db: Session = Depends(dependencies.get_db)):
-#     # Logic to get a queue
-#     pass
+# This file makes the 'routers' directory a Python package.
+# You can optionally import routers here to make them available,
+# though it's often cleaner to import them directly in main.py.
+
+# from .auth import router as auth_router
+# from .users import router as users_router # Example if you have a users_router
+# from .queues import router as queues_router # Example
+
+# __all__ = [
+# "auth_router",
+# "users_router",
+# "queues_router",
+# ]
