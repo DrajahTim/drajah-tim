@@ -15,9 +15,11 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Add other common packages here:
-  # http: ^1.0.0 # For making HTTP requests
-  # provider: ^6.0.0 # For state management
-  # shared_preferences: ^2.0.0 # For simple data persistence
+  http: ^1.1.0 # For making HTTP requests (latest version as of writing)
+  provider: ^6.0.5 # For state management (latest version as of writing)
+  shared_preferences: ^2.2.0 # For simple data persistence (latest version as of writing)
+  # flutter_secure_storage: ^9.0.0 # For more secure storage, if needed later
+
   # socket_io_client: ^2.0.0 # For real-time communication if using Socket.IO
   # firebase_core: ^2.0.0 # If using Firebase
   # firebase_messaging: ^14.0.0 # For Firebase Cloud Messaging
