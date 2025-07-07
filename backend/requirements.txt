@@ -1,10 +1,27 @@
-fastapi>=0.100.0
-uvicorn[standard]>=0.20.0
-pydantic>=2.0.0
+fastapi>=0.100.0 # Or a more recent version like 0.109.0
+uvicorn[standard]>=0.20.0 # Or a more recent version like 0.27.0
+pydantic>=2.0.0 # Or a more recent version like 2.6.0
+
+# Core Configurations & Database
+pydantic-settings>=2.0.0 # For loading .env and settings management
+python-dotenv>=1.0.0 # Used by pydantic-settings to load .env files
+
+# SQLAlchemy for ORM and Async Database
+sqlalchemy[asyncio]>=2.0.0 # Includes async capabilities, or use separate asyncpg/aiomysql etc.
+asyncpg>=0.27.0 # PostgreSQL async driver
+psycopg2-binary>=2.9.0 # PostgreSQL sync driver (for Alembic, or sync fallbacks)
+
+# Security: Password Hashing & JWT
+passlib[bcrypt]>=1.7.4
+python-jose[cryptography]>=3.3.0
+
+# For API input: python-multipart for form data (file uploads, etc.)
+python-multipart>=0.0.6
+
+# Optional: Alembic for database migrations
+# alembic>=1.9.0
+
 # Add other dependencies here as needed, e.g.:
-# sqlalchemy
-# psycopg2-binary (for PostgreSQL)
-# python-jose[cryptography] (for JWT tokens)
-# passlib[bcrypt] (for password hashing)
-# python-multipart (for form data/file uploads)
 # firebase-admin (if using Firebase)
+# httpx (for async external API calls)
+# Jinja2 (if serving templates directly from FastAPI)
