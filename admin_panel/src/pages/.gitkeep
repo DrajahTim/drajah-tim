@@ -1,0 +1,6 @@
+# This directory will hold React components that represent full pages or views in the admin panel.
+# Examples:
+# - DashboardPage.js
+# - QueueManagementPage.js
+# - UserSettingsPage.js
+# - AnalyticsPage.js

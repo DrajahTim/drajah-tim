@@ -1,0 +1,5 @@
+# This directory will hold services for tasks like:
+# - API communication (e.g., api_service.dart)
+# - Real-time event handling (e.g., socket_service.dart or fcm_service.dart)
+# - Local data storage (e.g., local_storage_service.dart)
+# - Authentication (e.g., auth_service.dart)
