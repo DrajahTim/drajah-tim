@@ -1,44 +1,18 @@
-# This directory will contain Pydantic schemas for data validation and serialization.
-# These schemas define the expected structure of API request and response bodies.
+# This file will make it easier to import schemas.
+# For example: from schemas import UserRead, UserCreate
 
-# For example: backend/schemas/queue.py
-#
-# from pydantic import BaseModel
-# from typing import Optional
-# from datetime import datetime
-#
-# class QueueBase(BaseModel):
-#     name: str
-#     description: Optional[str] = None
-#     location: Optional[str] = None
-#
-# class QueueCreate(QueueBase):
-#     pass
-#
-# class Queue(QueueBase):
-#     id: int
-#     manager_id: int
-#     created_at: datetime
-#     current_token_number: Optional[int] = None
-#     estimated_wait_time_minutes: Optional[int] = None
-#
-#     class Config:
-#         orm_mode = True # For SQLAlchemy compatibility
-#
-#
-# Example: backend/schemas/user.py
-#
-# from pydantic import BaseModel, EmailStr
-#
-# class UserBase(BaseModel):
-#     email: EmailStr
-#
-# class UserCreate(UserBase):
-#     password: str
-#
-# class User(UserBase):
-#     id: int
-#     is_active: bool
-#
-#     class Config:
-#         orm_mode = True
+from .user import User, UserCreate, UserUpdate, UserBase, UserRole
+from .business import Business, BusinessCreate, BusinessUpdate, BusinessBase
+from .queue import Queue, QueueCreate, QueueUpdate, QueueBase
+from .queue_entry import QueueEntry, QueueEntryCreate, QueueEntryUpdate, QueueEntryBase, QueueEntryStatus
+
+from .token import Token, TokenData
+
+
+__all__ = [
+    "User", "UserCreate", "UserUpdate", "UserBase", "UserRole",
+    "Business", "BusinessCreate", "BusinessUpdate", "BusinessBase",
+    "Queue", "QueueCreate", "QueueUpdate", "QueueBase",
+    "QueueEntry", "QueueEntryCreate", "QueueEntryUpdate", "QueueEntryBase", "QueueEntryStatus",
+    "Token", "TokenData",
+]
