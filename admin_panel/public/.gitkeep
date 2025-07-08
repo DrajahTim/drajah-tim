@@ -1,0 +1,5 @@
+# This file ensures the public directory is tracked by git even if it's initially empty,
+# for example, before actual static assets like images or logos are added.
+# Standard practice for Create React App is to have `favicon.ico`, `index.html`,
+# `logo192.png`, `logo512.png`, `manifest.json`, and `robots.txt` in this folder.
+# We've added index.html and manifest.json, others can be added as needed.
